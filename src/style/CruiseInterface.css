@@ -1,0 +1,102 @@
+.cruise-card {
+  background: linear-gradient(135deg, #f9fbff, #eef5ff);
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  max-width: 950px;
+  margin: 35px auto;
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.cruise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.15);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #003580;
+  margin-bottom: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title .icon {
+  color: #0071c2;
+  font-size: 26px;
+}
+
+.cruise-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  flex: 1;
+}
+
+.input-box label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.required {
+  color: red;
+}
+
+.optional {
+  font-size: 12px;
+  color: #888;
+}
+
+.input-box select {
+  padding: 12px;
+  border: 1px solid #ccd6f6;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-box select:focus {
+  border-color: #0071c2;
+  box-shadow: 0 0 10px rgba(0,113,194,0.25);
+}
+
+.search-box {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-btn {
+  background: linear-gradient(90deg, #0071c2, #36d1dc);
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+  background: linear-gradient(90deg, #36d1dc, #0071c2);
+  transform: scale(1.05);
+}

@@ -1,0 +1,102 @@
+.cabs-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 30px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cabs-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003580;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.cabs-options {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.cabs-options label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.cabs-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cabs-input-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.cabs-input-box label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+}
+
+.cabs-input-box input {
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.cabs-input-box input:focus {
+  border-color: #0071c2;
+}
+
+.cabs-swap-btn {
+  background: #f1f1f1;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 22px;
+  transition: 0.3s;
+}
+
+.cabs-swap-btn:hover {
+  background: #0071c2;
+  color: white;
+}
+
+.cabs-search-box {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.cabs-search-btn {
+  background: #0071c2;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cabs-search-btn:hover {
+  background: #004b8d;
+}

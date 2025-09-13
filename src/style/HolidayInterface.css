@@ -1,0 +1,62 @@
+.holiday-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.holiday-card h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.holiday-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-btn-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search-btn {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.search-btn:hover {
+  background: #0056b3;
+}

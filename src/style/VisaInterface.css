@@ -1,0 +1,75 @@
+.visa-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 950px;
+  margin: 30px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #003580;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.visa-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.input-box label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+}
+
+.input-box select,
+.input-box input {
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-box select:focus,
+.input-box input:focus {
+  border-color: #0071c2;
+}
+
+.search-box {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.search-btn {
+  background: #0071c2;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #005fa3;
+}

@@ -1,0 +1,110 @@
+.forex-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.forex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.forex-label {
+  color: purple;
+  font-weight: 600;
+}
+
+.forex-rate {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.forex-inr {
+  color: green;
+}
+
+.forex-link {
+  background: none;
+  border: none;
+  color: #0077ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.forex-delivery {
+  margin: 10px 0 20px;
+  font-weight: 600;
+  color: green;
+}
+
+.forex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.forex-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.forex-card-content {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.forex-img {
+  width: 70px;
+  height: 70px;
+}
+
+.forex-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.forex-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.forex-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.forex-btn:hover {
+  background: #005ec2;
+}
+
+.forex-footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+}
