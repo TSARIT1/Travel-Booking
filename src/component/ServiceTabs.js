@@ -25,6 +25,7 @@ import CabsInterface from "./CabsInterface";
 import VisaInterface from "./VisaInterface";
 import CruiseInterface from "./CruiseInterface";
 import ForexInterface from "./ForexInterface";
+import InsuranceInterface from "./InsuranceInterface";
 
 const ServiceTabs = () => {
 
@@ -95,6 +96,7 @@ const ServiceTabs = () => {
         {activeTab === "visa" && <VisaInterface />}
         {activeTab === "cruise" && <CruiseInterface />}
         {activeTab === "forex" && <ForexInterface />}
+         {activeTab === "insurance" && <InsuranceInterface />}
       </div>
     </>
   );

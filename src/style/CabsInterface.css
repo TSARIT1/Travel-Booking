@@ -1,102 +1,105 @@
-.cabs-card {
+
+.cab-card {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
   margin: 30px auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.cabs-title {
-  font-size: 20px;
+.cab-heading {
+  font-size: 18px;
   font-weight: bold;
   color: #003580;
   margin-bottom: 15px;
   text-align: right;
 }
 
-.cabs-options {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
 
-.cabs-options label {
+.trip-options {
+  display: flex;
+  gap: 25px;
   font-size: 14px;
-  color: #333;
-  cursor: pointer;
+  margin-bottom: 20px;
+  color: #444;
 }
 
-.cabs-form {
-  display: flex;
-  align-items: flex-end;
+.trip-options input {
+  margin-right: 6px;
+}
+
+.cab-form {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: flex-end;
 }
 
-.cabs-input-box {
+
+.cab-input {
   display: flex;
   flex-direction: column;
-  min-width: 160px;
 }
 
-.cabs-input-box label {
+.cab-input label {
   font-size: 13px;
-  margin-bottom: 6px;
+  font-weight: 600;
+  margin-bottom: 5px;
   color: #444;
-  font-weight: 500;
 }
 
-.cabs-input-box input {
-  padding: 10px;
+.cab-input input {
+  padding: 12px;
   border: 1px solid #d1d1d1;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
   outline: none;
 }
 
-.cabs-input-box input:focus {
+.cab-input input:focus {
   border-color: #0071c2;
+  box-shadow: 0 0 0 2px rgba(0, 113, 194, 0.2);
 }
 
-.cabs-swap-btn {
-  background: #f1f1f1;
-  border: none;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+
+.cab-swap {
+  font-size: 20px;
   margin-top: 22px;
+  text-align: center;
+  cursor: pointer;
+  background: #f1f1f1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   transition: 0.3s;
 }
 
-.cabs-swap-btn:hover {
+.cab-swap:hover {
   background: #0071c2;
-  color: white;
+  color: #fff;
 }
 
-.cabs-search-box {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
+
+.search-btn-container {
+  text-align: center;
+  margin-top: 25px;
 }
 
-.cabs-search-btn {
+.search-btn {
   background: #0071c2;
   color: #fff;
   border: none;
-  padding: 12px 30px;
-  border-radius: 6px;
-  font-size: 15px;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.cabs-search-btn:hover {
+.search-btn:hover {
   background: #004b8d;
 }

@@ -1,15 +1,15 @@
 import React from "react";
 import "../style/navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ onLoginClick }) {
   return (
     <nav className="navbar">
-      
       <div className="navbar-left">
-        <h2 className="logo">Tsar <span className="highlight">Travel</span> tripe</h2>
+        <h2 className="logo">
+          Tsar <span className="highlight">Travel</span> tripe
+        </h2>
       </div>
 
-      
       <div className="navbar-center">
         <div className="nav-item">
           <h4>List Your Property</h4>
@@ -25,9 +25,10 @@ export default function Navbar() {
         </div>
       </div>
 
-     
       <div className="navbar-right">
-        <button className="login-btn">Login / Create Account</button>
+        <button className="login-btn" onClick={onLoginClick}>
+          Login / Create Account
+        </button>
       </div>
     </nav>
   );

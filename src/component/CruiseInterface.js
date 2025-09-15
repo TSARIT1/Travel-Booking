@@ -18,7 +18,7 @@ const CruiseInterface = () => {
 
   const handleSearch = () => {
     if (!destination) {
-      alert("⚠️ Please select a destination.");
+      alert("Please select a destination.");
       return;
     }
     alert(`Cruise booked to ${destination} in ${month || "Any Month"}`);

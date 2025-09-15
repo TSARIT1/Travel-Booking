@@ -1,10 +1,9 @@
 import React from "react";
 import "../style/ForexInterface.css"; // CSS file import
-
+import image from "../image/card.jpeg"
 const ForexInterface = () => {
   return (
     <div className="forex-container">
-      {/* Heading */}
       <div className="forex-header">
         <span className="forex-label">Lowest Rate Guarantee</span>
         <h2 className="forex-rate">
@@ -12,19 +11,15 @@ const ForexInterface = () => {
         </h2>
         <button className="forex-link">More Info →</button>
       </div>
-
-      {/* Delivery Info */}
       <p className="forex-delivery">
         Door-step Delivery | Across 185+ Indian cities
       </p>
-
-      {/* Cards Section */}
       <div className="forex-grid">
-        {/* Multicurrency Card */}
+       
         <div className="forex-card">
           <div className="forex-card-content">
             <img
-              src="https://img.icons8.com/color/96/credit-card.png"
+              src={image}
               alt="Card"
               className="forex-img"
             />
@@ -59,7 +54,7 @@ const ForexInterface = () => {
         </div>
       </div>
 
-      {/* Footer Note */}
+     
       <p className="forex-footer">
         * Net effective rate after cashback is applied
       </p>
