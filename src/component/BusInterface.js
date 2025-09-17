@@ -40,24 +40,24 @@ const BusInterface = () => {
       <div className="bus-form">
         <div className="bus-input-box">
           <label>From</label>
-          <select value={fromCity} onChange={(e) => setFromCity(e.target.value)}>
-            <option value="">Select City</option>
+          <select value={fromCity} onChange={(e) => setFromCity(e.target.value)} style={{color:"black"}}>
+            <option value="" >Select City</option>
             {cities.map((city, idx) => (
-              <option key={idx} value={city}>
+              <option key={idx} value={city} style={{color:"black"}}>
                 {city}
               </option>
             ))}
           </select>
         </div>
         <button type="button" className="bus-swap-btn" onClick={swapCities}>
-          <FaExchangeAlt />
+          <FaExchangeAlt style={{color:"black"}}/>
         </button>
         <div className="bus-input-box">
           <label>To</label>
-          <select value={toCity} onChange={(e) => setToCity(e.target.value)}>
-            <option value="">Select City</option>
+          <select value={toCity} onChange={(e) => setToCity(e.target.value)}style={{color:"black"}}>
+            <option value=""style={{color:"black"}}>Select City</option>
             {cities.map((city, idx) => (
-              <option key={idx} value={city}>
+              <option key={idx} value={city}style={{color:"black"}}>
                 {city}
               </option>
             ))}
@@ -70,6 +70,7 @@ const BusInterface = () => {
             type="date"
             value={travelDate}
             onChange={(e) => setTravelDate(e.target.value)}
+            style={{color:"black"}}
           />
         </div>
         <div className="bus-search-box">

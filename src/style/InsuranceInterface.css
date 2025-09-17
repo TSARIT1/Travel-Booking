@@ -20,7 +20,7 @@
 }
 
 .claim {
-  color: #0071c2;
+  color: #1ab2ee;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -32,7 +32,7 @@
 .info-block h3 {
   font-size: 18px;
   margin-bottom: 6px;
-  color: #222;
+  color: #533a3a;
 }
 
 .info-block p {
@@ -42,7 +42,7 @@
 }
 
 .insurance-card {
-  background: #fff;
+  background: #360d0d;
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@
 
 .destination-box.selected {
   background: #0071c2;
-  color: white;
+  color: rgb(9, 8, 8);
   border-color: #0071c2;
 }
 
@@ -160,7 +160,7 @@
 
 .plan-btn.active {
   background: #0071c2;
-  color: #fff;
+  color: #141212;
   border-color: #0071c2;
 }
 
@@ -171,7 +171,7 @@
 
 .insurance-submit button {
   background: #0071c2;
-  color: white;
+  color: rgb(26, 24, 24);
   padding: 14px 40px;
   border: none;
   border-radius: 30px;

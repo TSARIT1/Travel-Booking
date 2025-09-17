@@ -1,7 +1,8 @@
 import React from "react";
+import { FaUserCircle } from "react-icons/fa"; // 🔥 profile icon
 import "../style/navbar.css";
 
-export default function Navbar({ onLoginClick }) {
+export default function Navbar({ onLoginClick, onProfileClick }) {
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -29,6 +30,9 @@ export default function Navbar({ onLoginClick }) {
         <button className="login-btn" onClick={onLoginClick}>
           Login / Create Account
         </button>
+        <div className="profile-icon" onClick={onProfileClick}>
+          <FaUserCircle size={28} color="#e46033" />
+        </div>
       </div>
     </nav>
   );

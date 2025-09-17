@@ -13,7 +13,7 @@ const HotelInterface = () => {
         </div>
         <div className="form-group">
           <label>Check-In</label>
-          <input type="date" />
+          <input type="date" / >
         </div>
         <div className="form-group">
           <label>Check-Out</label>
@@ -21,7 +21,7 @@ const HotelInterface = () => {
         </div>
         <div className="form-group">
           <label>Rooms & Guests</label>
-          <select>
+          <select className="guest">
             <option>1 Room 2 Adults</option>
             <option>1 Room 1 Adult</option>
             <option>2 Rooms 4 Adults</option>

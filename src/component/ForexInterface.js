@@ -34,7 +34,7 @@ const ForexInterface = () => {
           <button className="forex-btn">Get Your Card</button>
         </div>
 
-        {/* Foreign Currency Notes */}
+       
         <div className="forex-card">
           <div className="forex-card-content">
             <img

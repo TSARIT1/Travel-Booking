@@ -26,17 +26,43 @@ const TrainInterface = () => {
   };
 
   const handleSearch = () => {
+    if (!fromCity || !toCity || !travelDate) {
+      alert("Please fill all fields before searching.");
+      return;
+    }
     alert(`Searching Trains from ${fromCity} to ${toCity} on ${travelDate}`);
   };
 
   return (
     <div className="train-card">
-      <h2 className="title">Train Ticket Booking</h2>
+      <h2 className="title">🚆 Train Ticket Booking</h2>
 
       <div className="train-form">
         <div className="input-box">
-          <label>From</label>
-          <select value={fromCity} onChange={(e) => setFromCity(e.target.value)}>
+          <select
+            id="fromCity"
+            value={fromCity}
+            onChange={(e) => setFromCity(e.target.value)}
+          >
+            <option value="">Select City</option>
+            {cities.map((city, idx) => (
+              <option key={idx} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="swap-container">
+          <button type="button" className="swap-btn" onClick={swapCities}>
+            <FaExchangeAlt />
+          </button>
+        </div>
+        <div className="input-box">
+          <select
+            id="toCity"
+            value={toCity}
+            onChange={(e) => setToCity(e.target.value)}
+          >
             <option value="">Select City</option>
             {cities.map((city, idx) => (
               <option key={idx} value={city}>
@@ -46,35 +72,18 @@ const TrainInterface = () => {
           </select>
         </div>
 
-       
-        <button type="button" className="swap-btn" onClick={swapCities}>
-          <FaExchangeAlt />
-        </button>
-
-       
         <div className="input-box">
-          <label>To</label>
-          <select value={toCity} onChange={(e) => setToCity(e.target.value)}>
-            <option value="">Select City</option>
-            {cities.map((city, idx) => (
-              <option key={idx} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="input-box">
-          <label>Travel Date</label>
           <input
+            id="travelDate"
             type="date"
             value={travelDate}
             onChange={(e) => setTravelDate(e.target.value)}
+            style={{color:" #0000003c"}}
           />
         </div>
         <div className="search-box">
           <button className="search-btn" onClick={handleSearch}>
-            SEARCH
+            SEARCH TRAINS
           </button>
         </div>
       </div>

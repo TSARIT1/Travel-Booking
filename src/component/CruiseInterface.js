@@ -31,9 +31,8 @@ const CruiseInterface = () => {
       </h2>
 
       <div className="cruise-form">
-        {/* Destination */}
         <div className="input-box">
-          <label><FaSearchLocation /> Cruising To <span className="required">*</span></label>
+          {/* <label><FaSearchLocation /> Cruising To <span className="required">*</span></label> */}
           <select value={destination} onChange={(e) => setDestination(e.target.value)}>
             <option value="">Select Destination</option>
             {destinations.map((d, idx) => (
@@ -41,10 +40,8 @@ const CruiseInterface = () => {
             ))}
           </select>
         </div>
-
-        {/* Travel Month */}
         <div className="input-box">
-          <label><FaCalendarAlt /> Travel Month <span className="optional">(Optional)</span></label>
+          
           <select value={month} onChange={(e) => setMonth(e.target.value)}>
             <option value="">Select Month</option>
             {months.map((m, idx) => (
@@ -52,8 +49,6 @@ const CruiseInterface = () => {
             ))}
           </select>
         </div>
-
-        {/* Search */}
         <div className="search-box">
           <button className="search-btn" onClick={handleSearch}>
             Search Cruises

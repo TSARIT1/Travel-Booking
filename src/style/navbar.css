@@ -1,61 +1,65 @@
 .navbar {
-  background-color: #0a223d;
-  color: white;
-  padding: 12px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  align-items: center;
+  background: #25252b;
+  padding: 15px 30px;
+  color: white;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
-.logo .highlight {
-  background: #ff0000;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: white;
-}
 
+.logo .highlight {
+  color: #e46033;
+}
 
 .navbar-center {
   display: flex;
-  gap: 40px;
-  text-align: center;
+  gap: 25px;
 }
 
 .nav-item h4 {
-  font-size: 14px;
   margin: 0;
-}
-.nav-item p {
-  font-size: 12px;
-  margin: 0;
-  color: #cccccc;
+  font-size: 16px;
 }
 
+.nav-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 .login-btn {
-  background: #1a73e8;
+  background: #e46033;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
   color: white;
-  border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
   transition: 0.3s;
 }
 
 .login-btn:hover {
-  background: #1259b2;
+  background: #cf5028;
 }
-.navbar-right
-{
-  margin-right: 5%;
 
+.profile-icon {
+  margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+.profile-icon:hover {
+  opacity: 0.8;
+}
+

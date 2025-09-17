@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa6";
 import { FaShieldAlt } from "react-icons/fa";
 
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 import "../style/ServiceTabs.css";
 
@@ -37,7 +37,7 @@ const ServiceTabs = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="services">
         <div
           className={`service ${activeTab === "flights" ? "active" : ""}`}

@@ -36,7 +36,7 @@ const VisaInterface = () => {
       <div className="visa-form">
        
         <div className="input-box">
-          <label>Select Destination</label>
+          {/* <label>Select Destination</label> */}
           <select
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
@@ -51,7 +51,7 @@ const VisaInterface = () => {
         </div>
 
         <div className="input-box">
-          <label>Date of Departure</label>
+          {/* <label>Date of Departure</label> */}
           <input
             type="date"
             value={departureDate}
@@ -60,7 +60,7 @@ const VisaInterface = () => {
         </div>
 
         <div className="input-box">
-          <label>Date of Return</label>
+          {/* <label>Date of Return</label> */}
           <input
             type="date"
             value={returnDate}

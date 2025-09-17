@@ -108,3 +108,18 @@
   font-size: 12px;
   color: #666;
 }
+.form-group input{
+  color: black;
+}
+.form-group .guest{
+  color: black;
+}
+.form-group option{
+  color: black;
+}
+.form-group label{
+  color: black;
+}
+.form-group select{
+  color: black;
+}

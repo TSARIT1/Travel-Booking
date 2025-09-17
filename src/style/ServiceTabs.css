@@ -24,9 +24,13 @@
 .icon {
   font-size: 36px;
   margin-bottom: 6px;
-  color: #0071c2;
+  color: red;
   transition: color 0.3s ease;
+  background-color: rgba(30, 28, 28, 0.477);
 }
+
+
+
 
 .service:hover .icon {
   color: #ff6f61; 
@@ -35,6 +39,6 @@
 .service p {
   font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color:black;
   text-align: center;
 }
