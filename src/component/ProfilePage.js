@@ -75,8 +75,6 @@ const ProfilePage = () => {
             <button>Buy Gift Cards</button>
           </div>
         </header>
-
-        {/* Switch between tabs */}
         {activeTab === "profile" && (
           <section className="profile-form">
             <h2>My Profile</h2>
