@@ -93,7 +93,10 @@ const ProfilePage = ({ onClose }) => {
             <button>Buy Gift Cards</button>
           </div>
         </header>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 97cb260cf839b90942d129bb5a3ab665375bc8f2
         {activeTab === "profile" && (
           <section className="profile-form">
             <h2 style={{color:"black"}}>My Profile</h2>
