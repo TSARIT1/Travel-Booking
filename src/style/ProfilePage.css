@@ -50,6 +50,7 @@
   width: 1000px;
   margin: 0 auto;
 }
+
 .profile-header {
   display: flex;
   align-items: center;
@@ -105,7 +106,6 @@
   cursor: pointer;
 }
 
-
 .profile-form,
 .co-travellers,
 .devices {
@@ -113,7 +113,7 @@
   background: white;
   padding: 30px;
   border-radius: 8px;
-  width: 100%;       
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -135,6 +135,13 @@
   margin-bottom: 20px;
 }
 
+.form-grid label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
 .form-grid input,
 .form-grid select {
   padding: 10px;
@@ -142,6 +149,8 @@
   border-radius: 6px;
   color: black;
   background: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-grid select option {
@@ -161,6 +170,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
 .co-travellers {
   margin-top: 20px;
   background: white;
@@ -168,8 +178,8 @@
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
-  max-width: 1400px;   
-  margin: 0 auto;      
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .co-travellers-empty {
@@ -221,4 +231,8 @@
 .devices p {
   font-size: 14px;
   color: #666;
+}
+
+.co-travellers .profile-form {
+  margin-top: -18px;
 }

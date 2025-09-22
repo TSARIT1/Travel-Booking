@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import "../style/ProfilePage.css";
-import image from "../image/co-travel.avif"
+import image from "../image/co-travel.avif";
 
-const ProfilePage = () => {
-  const [activeTab, setActiveTab] = useState("profile"); // <-- tab state
-  const [form, setForm] = useState({
+const ProfilePage = ({ onClose }) => {
+  const [activeTab, setActiveTab] = useState("profile");
+  const [showCoForm, setShowCoForm] = useState(false);
+
+  const [profileForm, setProfileForm] = useState({
     firstName: "",
     lastName: "",
     gender: "",
@@ -21,16 +23,33 @@ const ProfilePage = () => {
     pan: "",
   });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const [coForm, setCoForm] = useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    dob: "",
+    relationship: "",
+    mobile: "",
+    passport: "",
+    expiry: "",
+    country: "",
+    frequentFlyer: "",
+  });
+
+  const handleProfileChange = (e) => {
+    setProfileForm({ ...profileForm, [e.target.name]: e.target.value });
+  };
+
+  const handleCoChange = (e) => {
+    setCoForm({ ...coForm, [e.target.name]: e.target.value });
   };
 
   return (
     <div className="profile-container">
-      {/* Sidebar */}
       <aside className="sidebar">
         <h3>MY ACCOUNT</h3>
         <ul>
+          <li onClick={onClose}>Home</li>
           <li
             className={activeTab === "profile" ? "active" : ""}
             onClick={() => setActiveTab("profile")}
@@ -56,7 +75,6 @@ const ProfilePage = () => {
         </div>
       </aside>
 
-      {/* Content area */}
       <main className="profile-content">
         <header className="profile-header">
           <div className="profile-photo">
@@ -76,121 +94,154 @@ const ProfilePage = () => {
           </div>
         </header>
 
-        {/* Switch between tabs */}
         {activeTab === "profile" && (
           <section className="profile-form">
-            <h2>My Profile</h2>
+            <h2 style={{color:"black"}}>My Profile</h2>
             <p className="progress">30% Complete your profile</p>
 
             <div className="form-grid">
-              <input
-                type="text"
-                placeholder="First & Middle Name"
-                name="firstName"
-                value={form.firstName}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                name="lastName"
-                value={form.lastName}
-                onChange={handleChange}
-              />
-              <select
-                name="gender"
-                value={form.gender}
-                onChange={handleChange}
-              >
-                <option>Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-              <input
-                type="date"
-                name="dob"
-                value={form.dob}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="Nationality"
-                name="nationality"
-                value={form.nationality}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="Marital Status"
-                name="maritalStatus"
-                value={form.maritalStatus}
-                onChange={handleChange}
-              />
-              <input
-                type="date"
-                placeholder="Anniversary"
-                name="anniversary"
-                value={form.anniversary}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="City of Residence"
-                name="city"
-                value={form.city}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="State"
-                name="state"
-                value={form.state}
-                onChange={handleChange}
-              />
+              <div>
+                <label>First & Middle Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={profileForm.firstName}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={profileForm.lastName}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Gender</label>
+                <select
+                  name="gender"
+                  value={profileForm.gender}
+                  onChange={handleProfileChange}
+                >
+                  <option value="">Select</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div>
+                <label>Date of Birth</label>
+                <input
+                  type="date"
+                  name="dob"
+                  value={profileForm.dob}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Nationality</label>
+                <input
+                  type="text"
+                  name="nationality"
+                  value={profileForm.nationality}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Marital Status</label>
+                <input
+                  type="text"
+                  name="maritalStatus"
+                  value={profileForm.maritalStatus}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Anniversary</label>
+                <input
+                  type="date"
+                  name="anniversary"
+                  value={profileForm.anniversary}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>City of Residence</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={profileForm.city}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>State</label>
+                <input
+                  type="text"
+                  name="state"
+                  value={profileForm.state}
+                  onChange={handleProfileChange}
+                />
+              </div>
             </div>
 
             <h3>Documents Details</h3>
             <div className="form-grid">
-              <input
-                type="text"
-                placeholder="Passport No."
-                name="passport"
-                value={form.passport}
-                onChange={handleChange}
-              />
-              <input
-                type="date"
-                placeholder="Expiry Date"
-                name="expiry"
-                value={form.expiry}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="Issuing Country"
-                name="country"
-                value={form.country}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                placeholder="PAN Card Number"
-                name="pan"
-                value={form.pan}
-                onChange={handleChange}
-              />
+              <div>
+                <label>Passport No.</label>
+                <input
+                  type="text"
+                  name="passport"
+                  value={profileForm.passport}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Expiry Date</label>
+                <input
+                  type="date"
+                  name="expiry"
+                  value={profileForm.expiry}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>Issuing Country</label>
+                <input
+                  type="text"
+                  name="country"
+                  value={profileForm.country}
+                  onChange={handleProfileChange}
+                />
+              </div>
+              <div>
+                <label>PAN Card Number</label>
+                <input
+                  type="text"
+                  name="pan"
+                  value={profileForm.pan}
+                  onChange={handleProfileChange}
+                />
+              </div>
             </div>
 
             <h3>Your Preferences</h3>
             <div className="form-grid">
-              <select>
-                <option>Domestic Trip Protection Plan</option>
-                <option>Other</option>
-              </select>
-              <select>
-                <option>International Travel Insurance Plan</option>
-                <option>Other</option>
-              </select>
+              <div>
+                <label>Domestic Trip Protection Plan</label>
+                <select>
+                  <option>Domestic Trip Protection Plan</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label>International Travel Insurance Plan</label>
+                <select>
+                  <option>International Travel Insurance Plan</option>
+                  <option>Other</option>
+                </select>
+              </div>
             </div>
 
             <h3>Frequent Flyer Details</h3>
@@ -202,13 +253,143 @@ const ProfilePage = () => {
 
         {activeTab === "coTravellers" && (
           <section className="co-travellers">
-            <h2>Co-Travellers</h2>
-            <div className="co-travellers-empty">
-              <img src={image} alt="Co-Travellers" />
-              <p>No Co-travellers saved</p>
-              <p>Make bookings faster and easier by saving your Co-traveller details</p>
-              <button className="add-btn">+ Add New Co-Traveller</button>
-            </div>
+            <h2 style={{color:"black"}}>Co-Travellers</h2>
+            {!showCoForm ? (
+              <div className="co-travellers-empty">
+                <img src={image} alt="Co-Travellers" />
+                <p>No Co-travellers saved</p>
+                <p>
+                  Make bookings faster and easier by saving your Co-traveller
+                  details
+                </p>
+                <button
+                  className="add-btn"
+                  onClick={() => setShowCoForm(true)}
+                >
+                  + Add New Co-Traveller
+                </button>
+              </div>
+            ) : (
+              <div className="profile-form">
+                <h3 style={{color:"black"}}>Add Co-Traveller</h3>
+                <div className="form-grid">
+                  <div>
+                    <label>First Name</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={coForm.firstName}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                  <div>
+                    <label>Last Name</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={coForm.lastName}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                  <div>
+                    <label>Gender</label>
+                    <select
+                      name="gender"
+                      value={coForm.gender}
+                      onChange={handleCoChange}
+                    >
+                      <option value="">Select</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Date of Birth</label>
+                    <input
+                      type="date"
+                      name="dob"
+                      value={coForm.dob}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                  <div>
+                    <label>Relationship with Traveller</label>
+                    <select
+                      name="relationship"
+                      value={coForm.relationship}
+                      onChange={handleCoChange}
+                    >
+                      <option value="">Select</option>
+                      <option>Spouse</option>
+                      <option>Child</option>
+                      <option>Sibling</option>
+                      <option>GrandParent</option>
+                      <option>Friend</option>
+                      <option>Parent</option>
+                      <option>Colleague</option>
+                      <option>Relative</option>
+                      <option>Parent In law</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Mobile Number</label>
+                    <input
+                      type="text"
+                      name="mobile"
+                      value={coForm.mobile}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                </div>
+
+                <h3>Documents Details</h3>
+                <div className="form-grid">
+                  <div>
+                    <label>Passport No.</label>
+                    <input
+                      type="text"
+                      name="passport"
+                      value={coForm.passport}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                  <div>
+                    <label>Expiry Date</label>
+                    <input
+                      type="date"
+                      name="expiry"
+                      value={coForm.expiry}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                  <div>
+                    <label>Issuing Country</label>
+                    <input
+                      type="text"
+                      name="country"
+                      value={coForm.country}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                </div>
+
+                <h3>Frequent Flyer Details</h3>
+                <div className="form-grid">
+                  <div>
+                    <label>Frequent Flyer Number</label>
+                    <input
+                      type="text"
+                      name="frequentFlyer"
+                      value={coForm.frequentFlyer}
+                      onChange={handleCoChange}
+                    />
+                  </div>
+                </div>
+
+                <button className="save-btn">SAVE</button>
+              </div>
+            )}
           </section>
         )}
 
