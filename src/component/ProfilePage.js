@@ -93,13 +93,10 @@ const ProfilePage = ({ onClose }) => {
             <button>Buy Gift Cards</button>
           </div>
         </header>
-<<<<<<< HEAD
 
-=======
->>>>>>> 97cb260cf839b90942d129bb5a3ab665375bc8f2
         {activeTab === "profile" && (
           <section className="profile-form">
-            <h2 style={{color:"black"}}>My Profile</h2>
+            <h2 style={{ color: "black" }}>My Profile</h2>
             <p className="progress">30% Complete your profile</p>
 
             <div className="form-grid">
@@ -256,7 +253,7 @@ const ProfilePage = ({ onClose }) => {
 
         {activeTab === "coTravellers" && (
           <section className="co-travellers">
-            <h2 style={{color:"black"}}>Co-Travellers</h2>
+            <h2 style={{ color: "black" }}>Co-Travellers</h2>
             {!showCoForm ? (
               <div className="co-travellers-empty">
                 <img src={image} alt="Co-Travellers" />
@@ -274,7 +271,7 @@ const ProfilePage = ({ onClose }) => {
               </div>
             ) : (
               <div className="profile-form">
-                <h3 style={{color:"black"}}>Add Co-Traveller</h3>
+                <h3 style={{ color: "black" }}>Add Co-Traveller</h3>
                 <div className="form-grid">
                   <div>
                     <label>First Name</label>

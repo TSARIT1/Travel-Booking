@@ -1,0 +1,90 @@
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa;
+  width: 1000px;
+}
+
+.payment-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 450px;
+  text-align: left;
+}
+
+.payment-box h2 {
+  color: #007bff;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  border-color: #e46033;
+  outline: none;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #e46033;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #cf5028;
+}
+
+.tnc {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.tnc a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tnc a:hover {
+  text-decoration: underline;
+}

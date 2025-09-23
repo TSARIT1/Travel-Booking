@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
 }
 
 .login-btn {
@@ -63,3 +64,29 @@
   opacity: 0.8;
 }
 
+.profile-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  left: 45%;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  width: 160px;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.profile-dropdown p {
+  padding: 10px 15px;
+  margin: 0;
+  color: #25252b;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-dropdown p:hover {
+  background: #f2f2f2;
+}

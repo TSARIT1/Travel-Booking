@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import "../style/navbar.css";
 
-export default function Navbar({ onLoginClick, onProfileClick, onMyTripsClick }) {
+export default function Navbar({ onLoginClick, onProfileClick, onMyTripsClick, onMakePaymentClick }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -30,9 +36,18 @@ export default function Navbar({ onLoginClick, onProfileClick, onMyTripsClick })
         <button className="login-btn" onClick={onLoginClick}>
           Login / Create Account
         </button>
-        <div className="profile-icon" onClick={onProfileClick}>
+
+        <div className="profile-icon" onClick={toggleDropdown}>
           <FaUserCircle size={28} color="#e46033" />
         </div>
+
+        {isDropdownOpen && (
+          <div className="profile-dropdown">
+            <p onClick={onProfileClick}>My Profile</p>
+            <p onClick={onMyTripsClick}>My Trips</p>
+            <p onClick={onMakePaymentClick}>Make Payment</p>
+          </div>
+        )}
       </div>
     </nav>
   );
