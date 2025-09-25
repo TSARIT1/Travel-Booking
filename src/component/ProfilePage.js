@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaTimes } from "react-icons/fa";
 import "../style/ProfilePage.css";
 import image from "../image/co-travel.avif";
 
 const ProfilePage = ({ onClose }) => {
   const [activeTab, setActiveTab] = useState("profile");
   const [showCoForm, setShowCoForm] = useState(false);
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [showForgotModal, setShowForgotModal] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const [profileForm, setProfileForm] = useState({
     firstName: "",
@@ -36,12 +39,21 @@ const ProfilePage = ({ onClose }) => {
     frequentFlyer: "",
   });
 
+  const [resetForm, setResetForm] = useState({
+    oldPassword: "",
+    newPassword: "",
+  });
+
   const handleProfileChange = (e) => {
     setProfileForm({ ...profileForm, [e.target.name]: e.target.value });
   };
 
   const handleCoChange = (e) => {
     setCoForm({ ...coForm, [e.target.name]: e.target.value });
+  };
+
+  const handleResetChange = (e) => {
+    setResetForm({ ...resetForm, [e.target.name]: e.target.value });
   };
 
   return (
@@ -70,8 +82,8 @@ const ProfilePage = ({ onClose }) => {
           </li>
         </ul>
         <div className="sidebar-bottom">
-          <p>Reset Password</p>
-          <p>Logout</p>
+          <p onClick={() => setShowResetModal(true)}>Reset Password</p>
+          <p onClick={() => setShowLogoutModal(true)}>Logout</p>
         </div>
       </aside>
 
@@ -400,6 +412,131 @@ const ProfilePage = ({ onClose }) => {
           </section>
         )}
       </main>
+
+      {showResetModal && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="modal-close"
+              onClick={() => setShowResetModal(false)}
+            >
+              <FaTimes />
+            </button>
+            <h2 style={{ color: "black" }}>Reset Password</h2>
+            <p className="modal-subtext">
+              Your password must be at least 8 characters long and include both
+              small and uppercase letters, numbers, and special characters
+              (e.g., $!@%)
+            </p>
+            <div className="form-grid">
+              <div>
+                <label>Old Password</label>
+                <input
+                  type="password"
+                  name="oldPassword"
+                  value={resetForm.oldPassword}
+                  onChange={handleResetChange}
+                />
+              </div>
+              <div>
+                <label>New Password</label>
+                <input
+                  type="password"
+                  name="newPassword"
+                  value={resetForm.newPassword}
+                  onChange={handleResetChange}
+                />
+              </div>
+            </div>
+            <p
+              className="forgot-link"
+              onClick={() => {
+                setShowResetModal(false);
+                setShowForgotModal(true);
+              }}
+            >
+              Forgot your password?
+            </p>
+            <div className="modal-actions">
+              <button
+                className="cancel-btn"
+                onClick={() => setShowResetModal(false)}
+              >
+                Cancel
+              </button>
+              <button className="save-btn">Reset Password</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showForgotModal && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="modal-close"
+              onClick={() => setShowForgotModal(false)}
+            >
+              <FaTimes />
+            </button>
+            <h2 style={{ color: "black" }}>Forgot Password?</h2>
+            <p className="modal-subtext">
+              An OTP has been sent to your registered mobile number (85******83)
+              and email (ay******@gmail.com) for verification.
+            </p>
+            <input
+              type="text"
+              className="otp-input"
+              maxLength={6}
+              placeholder="Enter 6 Digit OTP"
+            />
+            <p className="send-otp">Resend OTP (10s)</p>
+            <div className="modal-actions">
+              <button
+                className="cancel-btn"
+                onClick={() => setShowForgotModal(false)}
+              >
+                Cancel
+              </button>
+              <button className="save-btn">Verify OTP</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showLogoutModal && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <button
+              className="modal-close"
+              onClick={() => setShowLogoutModal(false)}
+            >
+              <FaTimes />
+            </button>
+            <h2 style={{ color: "black" }}>Logout</h2>
+            <p className="modal-subtext">
+              Are you sure you want to logout from your account?
+            </p>
+            <div className="modal-actions">
+              <button
+                className="cancel-btn"
+                onClick={() => setShowLogoutModal(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="save-btn"
+                onClick={() => {
+                  setShowLogoutModal(false);
+                  alert("Logged out successfully!");
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
