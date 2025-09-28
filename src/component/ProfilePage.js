@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaTimes } from "react-icons/fa";
 import "../style/ProfilePage.css";
 import image from "../image/co-travel.avif";
 
-const ProfilePage = ({ onClose }) => {
+const ProfilePage = ({ onClose, onSaveProfile, onSaveCoTraveller }) => {
   const [activeTab, setActiveTab] = useState("profile");
   const [showCoForm, setShowCoForm] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
@@ -105,7 +105,6 @@ const ProfilePage = ({ onClose }) => {
             <button>Buy Gift Cards</button>
           </div>
         </header>
-
         {activeTab === "profile" && (
           <section className="profile-form">
             <h2 style={{ color: "black" }}>My Profile</h2>
@@ -238,173 +237,179 @@ const ProfilePage = ({ onClose }) => {
               </div>
             </div>
 
-            <h3>Your Preferences</h3>
-            <div className="form-grid">
-              <div>
-                <label>Domestic Trip Protection Plan</label>
-                <select>
-                  <option>Domestic Trip Protection Plan</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label>International Travel Insurance Plan</label>
-                <select>
-                  <option>International Travel Insurance Plan</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-
-            <h3>Frequent Flyer Details</h3>
-            <p className="add-link">+ Add</p>
-
-            <button className="save-btn">SAVE</button>
+            <button
+              className="save-btn"
+              onClick={() => onSaveProfile && onSaveProfile(profileForm)}
+            >
+              SAVE
+            </button>
           </section>
         )}
+ 
+{activeTab === "coTravellers" && (
+  <section className="co-travellers">
+    <h2 style={{ color: "black" }}>Co-Travellers</h2>
+    {!showCoForm ? (
+      <div className="co-travellers-empty">
+        <img src={image} alt="Co-Travellers" />
+        <p>No Co-travellers saved</p>
+        <p>
+          Make bookings faster and easier by saving your Co-traveller
+          details
+        </p>
+        <button
+          className="add-btn"
+          onClick={() => setShowCoForm(true)}
+        >
+          + Add New Co-Traveller
+        </button>
+      </div>
+    ) : (
+      <div className="profile-form">
+        <h3 style={{ color: "black" }}>Add Co-Traveller</h3>
+        <div className="form-grid">
+          <div>
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              value={coForm.firstName}
+              onChange={handleCoChange}
+            />
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              value={coForm.lastName}
+              onChange={handleCoChange}
+            />
+          </div>
+          <div>
+            <label>Gender</label>
+            <select
+              name="gender"
+              value={coForm.gender}
+              onChange={handleCoChange}
+            >
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div>
+            <label>Date of Birth</label>
+            <input
+              type="date"
+              name="dob"
+              value={coForm.dob}
+              onChange={handleCoChange}
+            />
+          </div>
+          <div>
+            <label>Relationship with Traveller</label>
+            <select
+              name="relationship"
+              value={coForm.relationship}
+              onChange={handleCoChange}
+            >
+              <option value="">Select</option>
+              <option>Spouse</option>
+              <option>Child</option>
+              <option>Sibling</option>
+              <option>GrandParent</option>
+              <option>Friend</option>
+              <option>Parent</option>
+              <option>Colleague</option>
+              <option>Relative</option>
+              <option>Parent In law</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Mobile Number</label>
+            <input
+              type="text"
+              name="mobile"
+              value={coForm.mobile}
+              onChange={handleCoChange}
+            />
+          </div>
+        </div>
 
-        {activeTab === "coTravellers" && (
-          <section className="co-travellers">
-            <h2 style={{ color: "black" }}>Co-Travellers</h2>
-            {!showCoForm ? (
-              <div className="co-travellers-empty">
-                <img src={image} alt="Co-Travellers" />
-                <p>No Co-travellers saved</p>
-                <p>
-                  Make bookings faster and easier by saving your Co-traveller
-                  details
-                </p>
-                <button
-                  className="add-btn"
-                  onClick={() => setShowCoForm(true)}
-                >
-                  + Add New Co-Traveller
-                </button>
-              </div>
-            ) : (
-              <div className="profile-form">
-                <h3 style={{ color: "black" }}>Add Co-Traveller</h3>
-                <div className="form-grid">
-                  <div>
-                    <label>First Name</label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      value={coForm.firstName}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                  <div>
-                    <label>Last Name</label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      value={coForm.lastName}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                  <div>
-                    <label>Gender</label>
-                    <select
-                      name="gender"
-                      value={coForm.gender}
-                      onChange={handleCoChange}
-                    >
-                      <option value="">Select</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label>Date of Birth</label>
-                    <input
-                      type="date"
-                      name="dob"
-                      value={coForm.dob}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                  <div>
-                    <label>Relationship with Traveller</label>
-                    <select
-                      name="relationship"
-                      value={coForm.relationship}
-                      onChange={handleCoChange}
-                    >
-                      <option value="">Select</option>
-                      <option>Spouse</option>
-                      <option>Child</option>
-                      <option>Sibling</option>
-                      <option>GrandParent</option>
-                      <option>Friend</option>
-                      <option>Parent</option>
-                      <option>Colleague</option>
-                      <option>Relative</option>
-                      <option>Parent In law</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label>Mobile Number</label>
-                    <input
-                      type="text"
-                      name="mobile"
-                      value={coForm.mobile}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                </div>
+        <h3>Documents Details</h3>
+        <div className="form-grid">
+          <div>
+            <label>Passport No.</label>
+            <input
+              type="text"
+              name="passport"
+              value={coForm.passport}
+              onChange={handleCoChange}
+            />
+          </div>
+          <div>
+            <label>Expiry Date</label>
+            <input
+              type="date"
+              name="expiry"
+              value={coForm.expiry}
+              onChange={handleCoChange}
+            />
+          </div>
+          <div>
+            <label>Issuing Country</label>
+            <input
+              type="text"
+              name="country"
+              value={coForm.country}
+              onChange={handleCoChange}
+            />
+          </div>
+        </div>
 
-                <h3>Documents Details</h3>
-                <div className="form-grid">
-                  <div>
-                    <label>Passport No.</label>
-                    <input
-                      type="text"
-                      name="passport"
-                      value={coForm.passport}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                  <div>
-                    <label>Expiry Date</label>
-                    <input
-                      type="date"
-                      name="expiry"
-                      value={coForm.expiry}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                  <div>
-                    <label>Issuing Country</label>
-                    <input
-                      type="text"
-                      name="country"
-                      value={coForm.country}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                </div>
+        <h3>Frequent Flyer Details</h3>
+        <div className="form-grid">
+          <div>
+            <label>Frequent Flyer Number</label>
+            <input
+              type="text"
+              name="frequentFlyer"
+              value={coForm.frequentFlyer}
+              onChange={handleCoChange}
+            />
+          </div>
+        </div>
 
-                <h3>Frequent Flyer Details</h3>
-                <div className="form-grid">
-                  <div>
-                    <label>Frequent Flyer Number</label>
-                    <input
-                      type="text"
-                      name="frequentFlyer"
-                      value={coForm.frequentFlyer}
-                      onChange={handleCoChange}
-                    />
-                  </div>
-                </div>
+        <button
+          className="save-btn"
+          onClick={() => {
+            onSaveCoTraveller && onSaveCoTraveller(coForm);
+            setShowCoForm(false);
+            setCoForm({
+              firstName: "",
+              lastName: "",
+              gender: "",
+              dob: "",
+              relationship: "",
+              mobile: "",
+              passport: "",
+              expiry: "",
+              country: "",
+              frequentFlyer: "",
+            });
+          }}
+        >
+          SAVE
+        </button>
+      </div>
+    )}
+  </section>
+)}
 
-                <button className="save-btn">SAVE</button>
-              </div>
-            )}
-          </section>
-        )}
 
+        {/* Devices Tab */}
         {activeTab === "devices" && (
           <section className="devices">
             <h2>Logged In Devices</h2>
@@ -413,6 +418,7 @@ const ProfilePage = ({ onClose }) => {
         )}
       </main>
 
+      {/* Reset Password Modal */}
       {showResetModal && (
         <div className="modal-overlay">
           <div className="modal-box">
@@ -426,7 +432,7 @@ const ProfilePage = ({ onClose }) => {
             <p className="modal-subtext">
               Your password must be at least 8 characters long and include both
               small and uppercase letters, numbers, and special characters
-              (e.g., $!@%)
+              (e.g., $!@%).
             </p>
             <div className="form-grid">
               <div>
@@ -470,6 +476,7 @@ const ProfilePage = ({ onClose }) => {
         </div>
       )}
 
+      {/* Forgot Password Modal */}
       {showForgotModal && (
         <div className="modal-overlay">
           <div className="modal-box">
@@ -504,6 +511,7 @@ const ProfilePage = ({ onClose }) => {
         </div>
       )}
 
+      {/* Logout Modal */}
       {showLogoutModal && (
         <div className="modal-overlay">
           <div className="modal-box">
